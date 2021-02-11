@@ -14,8 +14,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV, train_test_split
 
-#nltk.download('stopwords')
-#nltk.download('wordnet')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 
 class PredictorForm(FlaskForm):
@@ -27,7 +27,7 @@ with open('mbti_model.pickle', 'rb') as f:
     model = pickle.load(f)
 
 with open('vector.pickle', 'rb') as cv:
-    vec = pickle.load(cv)
+   vec = pickle.load(cv)
 
 stopwords = nltk.corpus.stopwords.words('english')
 ps = nltk.PorterStemmer()
